@@ -233,27 +233,30 @@
     .stats-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
+      gap: 0.5rem;
       margin-bottom: 1rem;
     }
     .stat {
       text-align: center;
-      padding: 0.5rem 0.25rem;
-      border-radius: var(--radius-sm);
-      background: var(--bg-secondary);
+      padding: 0.6rem 0.35rem;
+      border-radius: 8px;
+      background: transparent;
+      border: 1px solid var(--border);
     }
     .stat-number {
       font-family: 'Outfit', sans-serif;
-      font-size: 1.25rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: var(--accent);
-      line-height: 1.2;
+      line-height: 1.3;
     }
     .stat-label {
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       color: var(--text-tertiary);
       font-weight: 500;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-top: 0.1rem;
     }
     .athletics-note {
       font-size: 0.85rem;
@@ -377,6 +380,8 @@
       flex-direction: column;
       gap: 0.75rem;
       align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .btn {
@@ -461,7 +466,8 @@
       .strength-grid { grid-template-columns: 1fr 1fr; }
       .strength-card { padding: 2rem; }
 
-      .cta-group { flex-direction: row; justify-content: center; }
+      .cta-group { flex-direction: row; justify-content: center; flex-wrap: wrap; }
+      .btn { min-width: 160px; }
 
       .contact { padding: 5rem 2rem; }
       .contact-heading { font-size: 2rem; }
@@ -560,17 +566,17 @@
         <li class="exp-entry" data-animate style="--delay:1">
           <div class="exp-role">Educational Assistant</div>
           <div class="exp-org">High School &middot; Perth, Australia</div>
-          <p class="exp-desc">Worked with disruptive and at-risk students so teachers could actually teach. Figured out what each kid needed — some wanted to be heard, some needed firm boundaries, some just needed someone to not give up on them.</p>
+          <p class="exp-desc">Supported teachers by managing classroom behavior and working one-on-one with disruptive students. Learned quickly that every kid responds differently — some need firm boundaries, others just need someone who won't give up on them.</p>
         </li>
         <li class="exp-entry" data-animate style="--delay:2">
           <div class="exp-role">Sales Representative</div>
           <div class="exp-org">Daily Gut Supplements &middot; Perth, Australia</div>
-          <p class="exp-desc">Sold gut health supplements at a Christmas pop-up. The target customer was middle-aged women, but Zahra ended up selling to teenagers, older couples, and guys who'd never thought about gut health — just by reading people and adjusting on the fly.</p>
+          <p class="exp-desc">Ran sales at a Christmas retail pop-up for a dietary supplement brand. Adapted pitch and approach for each customer on the spot — from the target demographic to teenagers and older couples who weren't expecting to buy.</p>
         </li>
         <li class="exp-entry" data-animate style="--delay:3">
           <div class="exp-role">Track &amp; Field Coach</div>
           <div class="exp-org">Multiple Institutions &middot; Perth, Australia &middot; 8 years</div>
-          <p class="exp-desc">Started coaching in 10th grade and never stopped. High jump, hurdles, discus, throws — across four high schools, one athletics club, and a primary school. Every kid needs a different approach, and the parents and teachers need to trust you. She made that work for eight years.</p>
+          <p class="exp-desc">Eight years coaching high jump, hurdles, discus, and throws across four high schools, one athletics club, and a primary school. Built trust with parents, teachers, and fellow coaches while developing athletes individually — no two kids respond to the same coaching style.</p>
         </li>
       </ul>
     </div>
@@ -579,7 +585,7 @@
   <!-- STRENGTHS -->
   <section class="section section--alt" id="strengths">
     <div class="section-inner">
-      <p class="section-label" data-animate>What I Bring</p>
+      <p class="section-label" data-animate>What She Brings</p>
       <div class="strength-grid">
 
         <div class="strength-card" data-animate style="--delay:1">
@@ -603,7 +609,7 @@
         <div class="strength-card" data-animate style="--delay:4">
           <svg class="strength-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
           <h3 class="strength-title">At Home Anywhere</h3>
-          <p class="strength-desc">Perth to upstate New York to the Bay Area. Three very different places, and she built real community in all of them. Australians are good at that — showing up, being genuine, and making friends fast.</p>
+          <p class="strength-desc">Perth to upstate New York to the Bay Area. Three very different places, and she built real community in all of them. She doesn't wait for people to come to her — she's the one organizing the team dinner.</p>
         </div>
 
       </div>
@@ -615,13 +621,17 @@
     <div class="section-inner">
       <div data-animate>
         <h2 class="contact-heading">Let's Connect</h2>
-        <p class="contact-sub">Zahra is looking for work in the Bay Area — something that uses her science background and lets her work with people. She's open to biotech, education, sales, and anything where she can keep learning.</p>
+        <p class="contact-sub">Zahra is looking for work in the Bay Area — something that uses her science and business background and lets her work with people. She's open to biotech, education, sales, and anything where she can keep learning.</p>
         <div class="contact-visa">Australian Citizen &middot; E-3 Visa Eligible &middot; No Lottery Required</div>
       </div>
       <div class="cta-group" data-animate style="--delay:1">
         <a href="mailto:zahra.amos124@gmail.com" class="btn btn--primary">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           Get in Touch
+        </a>
+        <a href="/Zahra_Amos_Resume.docx" download class="btn btn--secondary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Resume
         </a>
         <a href="#" class="btn btn--secondary">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
