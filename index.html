@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zahra Amos</title>
+  <meta name="description" content="Scientist. Athlete. Leader. Biology graduate and D1 athlete based in Berkeley, CA.">
+  <meta property="og:title" content="Zahra Amos">
+  <meta property="og:description" content="Scientist. Athlete. Leader. Based in Berkeley, CA.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Zahra Amos">
+  <meta name="twitter:description" content="Scientist. Athlete. Leader. Based in Berkeley, CA.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='80' fill='%23C4704B'>Z</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-primary: #FDFCFA;
+      --bg-secondary: #F5F3EF;
+      --bg-card: #FFFFFF;
+      --text-primary: #1A1814;
+      --text-secondary: #6B6560;
+      --text-tertiary: #9C958E;
+      --accent: #C4704B;
+      --accent-light: #F0DDD3;
+      --accent-hover: #A85D3B;
+      --border: #E8E4DE;
+      --border-light: #F0ECE6;
+      --shadow-sm: 0 1px 3px rgba(26,24,20,0.04);
+      --shadow-md: 0 4px 16px rgba(26,24,20,0.06);
+      --shadow-lg: 0 8px 32px rgba(26,24,20,0.08);
+      --radius: 16px;
+      --radius-sm: 10px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      position: relative;
+      background: var(--bg-primary);
+    }
+
+    .hero-photo {
+      width: 140px; height: 140px;
+      border-radius: 50%;
+      background: var(--bg-secondary);
+      border: 3px solid var(--accent-light);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.75rem;
+      overflow: hidden;
+    }
+    .hero-photo svg { width: 60px; height: 60px; }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+    .hero-name {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-tagline {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-location {
+      font-size: 0.8rem;
+      color: var(--text-tertiary);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      display: flex; align-items: center; gap: 0.35rem;
+      justify-content: center;
+    }
+    .hero-location svg { width: 14px; height: 14px; }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2rem;
+      animation: bounce 2s infinite ease-in-out;
+      transition: opacity 0.4s;
+    }
+    .scroll-hint.hidden { opacity: 0; pointer-events: none; }
+    .scroll-hint svg { width: 24px; height: 24px; stroke: var(--text-tertiary); }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+
+    /* ===== SECTIONS ===== */
+    .section {
+      padding: 3.5rem 1.5rem;
+    }
+    .section--alt { background: var(--bg-secondary); }
+    .section-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .section-heading {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .accent-line {
+      width: 40px; height: 2px;
+      background: var(--accent);
+      margin: 0 auto 1.5rem;
+      border-radius: 2px;
+    }
+
+    /* ===== ABOUT ===== */
+    .about-text {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--text-secondary);
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ===== BACKGROUND CARDS ===== */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .card-icon {
+      width: 28px; height: 28px;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    /* Education timeline */
+    .edu-entry { margin-bottom: 1rem; padding-left: 1.25rem; position: relative; }
+    .edu-entry:last-child { margin-bottom: 0; }
+    .edu-entry::before {
+      content: '';
+      position: absolute; left: 0; top: 8px;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .edu-entry::after {
+      content: '';
+      position: absolute; left: 2.5px; top: 18px;
+      width: 1px; height: calc(100% + 0.25rem);
+      background: var(--border);
+    }
+    .edu-entry:last-child::after { display: none; }
+    .edu-degree {
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+    .edu-school {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+    .edu-detail {
+      font-size: 0.8rem;
+      color: var(--text-tertiary);
+      margin-top: 0.15rem;
+    }
+
+    /* Athletics stats grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .stat {
+      text-align: center;
+      padding: 0.5rem 0.25rem;
+      border-radius: var(--radius-sm);
+      background: var(--bg-secondary);
+    }
+    .stat-number {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1.2;
+    }
+    .stat-label {
+      font-size: 0.7rem;
+      color: var(--text-tertiary);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+    .athletics-note {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* ===== EXPERIENCE ===== */
+    .exp-list { list-style: none; }
+    .exp-entry {
+      padding-left: 1.5rem;
+      position: relative;
+      padding-bottom: 1.5rem;
+    }
+    .exp-entry:last-child { padding-bottom: 0; }
+    .exp-entry::before {
+      content: '';
+      position: absolute; left: 0; top: 8px;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .exp-entry::after {
+      content: '';
+      position: absolute; left: 3.5px; top: 20px;
+      width: 1px; height: calc(100% - 12px);
+      background: var(--border);
+    }
+    .exp-entry:last-child::after { display: none; }
+    .exp-role {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .exp-org {
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+      margin-bottom: 0.35rem;
+    }
+    .exp-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    /* ===== STRENGTHS ===== */
+    .strength-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    .strength-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-top: 3px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .strength-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .strength-icon {
+      width: 32px; height: 32px;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .strength-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .strength-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact {
+      text-align: center;
+      padding: 4rem 1.5rem;
+      background: var(--bg-primary);
+    }
+    .contact-heading {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+    .contact-sub {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      max-width: 500px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+    .contact-visa {
+      display: inline-block;
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 500;
+      background: var(--accent-light);
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      margin-bottom: 1.75rem;
+    }
+
+    .cta-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      border-radius: 9999px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+      font-family: 'Inter', sans-serif;
+      min-width: 200px;
+      justify-content: center;
+    }
+    .btn svg { width: 18px; height: 18px; }
+
+    .btn--primary {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn--primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(196,112,75,0.3);
+    }
+
+    .btn--secondary {
+      background: transparent;
+      color: var(--accent);
+      border: 2px solid var(--accent);
+    }
+    .btn--secondary:hover {
+      background: var(--accent-light);
+      transform: translateY(-1px);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+    }
+
+    /* ===== ANIMATIONS ===== */
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      transition-delay: calc(var(--delay, 0) * 0.1s);
+    }
+    [data-animate].visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      [data-animate] { opacity: 1; transform: none; transition: none; }
+      .scroll-hint { animation: none; }
+    }
+
+    /* ===== DESKTOP (768px+) ===== */
+    @media (min-width: 768px) {
+      .section { padding: 5rem 2rem; }
+
+      .hero-name { font-size: 3.5rem; }
+      .hero-tagline { font-size: 1.15rem; }
+      .hero-photo { width: 160px; height: 160px; }
+
+      .section-heading { font-size: 1.75rem; }
+
+      .about-text { font-size: 1.1rem; }
+
+      .card-grid { grid-template-columns: 1fr 1fr; }
+
+      .card { padding: 2rem; }
+
+      .stats-grid { grid-template-columns: repeat(4, 1fr); }
+
+      .strength-grid { grid-template-columns: 1fr 1fr; }
+      .strength-card { padding: 2rem; }
+
+      .cta-group { flex-direction: row; justify-content: center; }
+
+      .contact { padding: 5rem 2rem; }
+      .contact-heading { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-photo">
+      <!-- Replace this SVG with <img src="photo.jpg" alt="Zahra Amos"> -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="#9C958E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+        <circle cx="12" cy="7" r="4"/>
+      </svg>
+    </div>
+    <h1 class="hero-name">Zahra Amos</h1>
+    <p class="hero-tagline">Scientist &middot; Athlete &middot; Leader</p>
+    <p class="hero-location">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Australian &middot; Berkeley, CA
+    </p>
+    <div class="scroll-hint" id="scrollHint">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="section-inner" data-animate>
+      <p class="section-label">About</p>
+      <div class="accent-line"></div>
+      <p class="about-text">
+        I'm a biology graduate and D1 athlete who moved from Perth, Australia to compete and study at two American universities on full-ride scholarships. I bring eight years of coaching experience, a neuroscience-trained understanding of how people think and connect, and the kind of leadership that transforms team culture from the inside out. I'm looking for work in the Bay Area that combines scientific depth with real human connection.
+      </p>
+    </div>
+  </section>
+
+  <!-- BACKGROUND -->
+  <section class="section section--alt" id="background">
+    <div class="section-inner">
+      <p class="section-label" data-animate>Background</p>
+      <div class="card-grid">
+
+        <!-- Education Card -->
+        <div class="card" data-animate style="--delay:1">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.657 2.686 3 6 3s6-1.343 6-3v-5"/></svg>
+          <h3 class="card-title">Education</h3>
+          <div class="edu-entry">
+            <p class="edu-degree">Certificate of Entrepreneurship</p>
+            <p class="edu-school">UC Berkeley Extension</p>
+            <p class="edu-detail">Negotiation, Marketing, Business Development</p>
+          </div>
+          <div class="edu-entry">
+            <p class="edu-degree">BS Biological Sciences</p>
+            <p class="edu-school">University at Buffalo, SUNY</p>
+            <p class="edu-detail">Focus: Human Biology &amp; Neuroscience</p>
+          </div>
+        </div>
+
+        <!-- Athletics Card -->
+        <div class="card" data-animate style="--delay:2">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+          <h3 class="card-title">Athletics</h3>
+          <div class="stats-grid">
+            <div class="stat">
+              <div class="stat-number">D1</div>
+              <div class="stat-label">Two Universities</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">2x</div>
+              <div class="stat-label">Record Breaker</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">8 yrs</div>
+              <div class="stat-label">Coaching</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">Captain</div>
+              <div class="stat-label">2024&ndash;25</div>
+            </div>
+          </div>
+          <p class="athletics-note">NCAA Division I high jumper at UC Berkeley and University at Buffalo. Two-time indoor record holder, Regional and National qualifier.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <div class="section-inner">
+      <p class="section-label" data-animate>Experience</p>
+      <div class="section-heading" data-animate>Where I've Made an Impact</div>
+      <ul class="exp-list">
+        <li class="exp-entry" data-animate style="--delay:1">
+          <div class="exp-role">Educational Assistant</div>
+          <div class="exp-org">High School &middot; Perth, Australia</div>
+          <p class="exp-desc">Managed classroom dynamics and de-escalated disruptive students in a fast-paced school environment, building trust with hundreds of students through patient, individualized communication.</p>
+        </li>
+        <li class="exp-entry" data-animate style="--delay:2">
+          <div class="exp-role">Sales Representative</div>
+          <div class="exp-org">Daily Gut Supplements &middot; Perth, Australia</div>
+          <p class="exp-desc">Adapted sales approach in real time across diverse demographics at retail pop-up events, reading people quickly and tailoring messaging to build rapport and close sales outside the core audience.</p>
+        </li>
+        <li class="exp-entry" data-animate style="--delay:3">
+          <div class="exp-role">Track &amp; Field Coach</div>
+          <div class="exp-org">Multiple Institutions &middot; Perth, Australia &middot; 8 years</div>
+          <p class="exp-desc">Coached athletes from primary school through high school across six institutions, developing individuals within group settings and building strong relationships with parents, teachers, and fellow coaches.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- STRENGTHS -->
+  <section class="section section--alt" id="strengths">
+    <div class="section-inner">
+      <p class="section-label" data-animate>What I Bring</p>
+      <div class="strength-grid">
+
+        <div class="strength-card" data-animate style="--delay:1">
+          <svg class="strength-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <h3 class="strength-title">Interpersonal Intelligence</h3>
+          <p class="strength-desc">Trained by neuroscience, refined through eight years of practice. I read people quickly, adapt my communication in real time, and build trust fast.</p>
+        </div>
+
+        <div class="strength-card" data-animate style="--delay:2">
+          <svg class="strength-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+          <h3 class="strength-title">Leadership</h3>
+          <p class="strength-desc">I lead by example and build culture through connection. At Buffalo, I transformed team dynamics by bridging groups, raising standards, and creating positive energy that spread.</p>
+        </div>
+
+        <div class="strength-card" data-animate style="--delay:3">
+          <svg class="strength-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 2 15H2L8 3z"/></svg>
+          <h3 class="strength-title">Resilience</h3>
+          <p class="strength-desc">I chose neuroscience because it was hard. I chose Berkeley for one final season at the highest level. I seek challenge, not comfort.</p>
+        </div>
+
+        <div class="strength-card" data-animate style="--delay:4">
+          <svg class="strength-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <h3 class="strength-title">Cross-Cultural Adaptability</h3>
+          <p class="strength-desc">Perth to Buffalo to Berkeley. I've built community and thrived in every environment. I adapt quickly and bring fresh perspective to every team I join.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="section-inner">
+      <div data-animate>
+        <h2 class="contact-heading">Let's Connect</h2>
+        <p class="contact-sub">I'm actively seeking opportunities in the Bay Area where I can combine scientific depth with interpersonal impact.</p>
+        <div class="contact-visa">Australian Citizen &middot; E-3 Visa Eligible &middot; No Lottery Required</div>
+      </div>
+      <div class="cta-group" data-animate style="--delay:1">
+        <a href="mailto:zahra.amos124@gmail.com" class="btn btn--primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Get in Touch
+        </a>
+        <a href="#" class="btn btn--secondary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    Berkeley, CA &middot; zahra.amos124@gmail.com
+  </footer>
+
+  <script>
+    // Scroll-triggered animations
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('[data-animate]').forEach(function(el) {
+      observer.observe(el);
+    });
+
+    // Hide scroll hint on scroll
+    var scrollHint = document.getElementById('scrollHint');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 100) {
+        scrollHint.classList.add('hidden');
+      } else {
+        scrollHint.classList.remove('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
