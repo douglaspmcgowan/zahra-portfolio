@@ -131,6 +131,44 @@
       50% { transform: translateY(8px); }
     }
 
+    /* ===== ABOUT PHOTOS ===== */
+    .about-photos {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding: 0 1rem;
+    }
+    .about-photo {
+      width: 45%;
+      max-width: 240px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: transform 0.4s ease;
+    }
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .about-photo:first-child {
+      transform: rotate(-2deg);
+      margin-top: 1rem;
+    }
+    .about-photo:last-child {
+      transform: rotate(2deg);
+      margin-top: -0.5rem;
+    }
+    .about-photo:first-child:hover { transform: rotate(0deg) scale(1.02); }
+    .about-photo:last-child:hover { transform: rotate(0deg) scale(1.02); }
+
+    @media (min-width: 768px) {
+      .about-photo { max-width: 280px; }
+      .about-photos { gap: 1.5rem; }
+    }
+
     /* ===== SECTIONS ===== */
     .section {
       padding: 3.5rem 1.5rem;
@@ -547,10 +585,18 @@
 
   <!-- ABOUT -->
   <section class="section" id="about">
-    <div class="section-inner" data-animate>
-      <p class="section-label">About</p>
-      <div class="accent-line"></div>
-      <p class="about-text">
+    <div class="section-inner">
+      <p class="section-label" data-animate>About</p>
+      <div class="about-photos" data-animate>
+        <div class="about-photo">
+          <img src="/jump1.jpeg" alt="Zahra Amos high jumping in competition" loading="lazy">
+        </div>
+        <div class="about-photo">
+          <img src="/jump2.jpeg" alt="Zahra Amos clearing the high jump bar" loading="lazy">
+        </div>
+      </div>
+      <div class="accent-line" data-animate style="--delay:1"></div>
+      <p class="about-text" data-animate style="--delay:2">
         Zahra grew up in Perth, Australia and came to the US on a full-ride athletic scholarship to compete in Division I high jump. She studied biology with a neuroscience focus at the University at Buffalo, then transferred to UC Berkeley for her final season. She's been coaching track and field since she was 15. Right now she's finishing a certificate in entrepreneurship at Berkeley and looking for her next thing in the Bay Area.
       </p>
     </div>
